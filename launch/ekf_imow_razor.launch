@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_imow_razor" clear_params="true">
+    <rosparam command="load" file="$(find robot_localization)/params/ekf_imow_razor.yaml" />
+
+    <remap from="odometry/filtered" to="ekf/odometry_razor"/>
+    <remap from="accel/filtered" to="ekf/accel"/>
+    
+
+  </node>
+</launch>
